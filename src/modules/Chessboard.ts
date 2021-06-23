@@ -164,10 +164,9 @@ export default class Chessboard extends egret.DisplayObjectContainer {
       return;
     }
 
-    const { row, column } = this.selectedChess;
     if (this.couldEat(this.selectedChess, this.chesses[beEatRow][beEatColumn])) {
-      this.chesses[beEatRow][beEatColumn] = this.selectedChess;
-      this.chesses[row][column] = null;
+      this.chesses[beEatRow][beEatColumn].destroy();
+      this.chesses[beEatRow][beEatColumn] = null;
 
       this.selectedChess.moveTo(beEatRow, beEatColumn);
       this.clearSelectedChess();

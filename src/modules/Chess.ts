@@ -90,6 +90,10 @@ export default class Chess extends egret.DisplayObjectContainer {
     return result;
   }
 
+  public destroy() {
+    this.removeChild(this.chessBitmap);
+  }
+
   render() {
     if (this.chessBitmap) {
       this.removeChild(this.chessBitmap);
