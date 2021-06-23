@@ -94,6 +94,10 @@ export default class Chess extends egret.DisplayObjectContainer {
     this.removeChild(this.chessBitmap);
   }
 
+  private isTurned() {
+    return this.status === CHESS_STATUS.TURNED;
+  }
+
   render() {
     if (this.chessBitmap) {
       this.removeChild(this.chessBitmap);
